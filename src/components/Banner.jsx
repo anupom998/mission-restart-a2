@@ -5,7 +5,7 @@ export default function Banner({numberOfPendingTickets, numberOfResolvedTickets}
 
     return (
         <section>
-            <div className="container mx-auto my-12">
+            <div className="container px-4 lg:px-0 lg:mx-auto my-12">
                 <div className="flex flex-col lg:flex-row gap-6 justify-between items-center text-white text-center">
 
                     {/* Card 1 */}

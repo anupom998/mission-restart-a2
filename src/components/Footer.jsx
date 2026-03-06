@@ -121,7 +121,7 @@ import { Linkedin, Mail, X, Facebook } from 'lucide-react';
 const Footer = () => {
     return(
         <footer className='bg-black text-[#A1A1AA]'>
-          <div className='container mx-auto pt-12'> 
+          <div className='container px-4 lg:px-0 lg:mx-auto pt-12'> 
             <div>
                 {/* text content block*/}
                 <div className='grid grid-cols-1 lg:grid-cols-5 gap-8 px-12 lg:px-0 text-center lg:text-start'>
