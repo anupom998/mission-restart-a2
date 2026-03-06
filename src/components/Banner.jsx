@@ -1,9 +1,7 @@
 import { useState } from "react";
 import vectorImg from "../assets/vector1.png"; 
 
-export default function Banner() {
-    const [inProgress, setInProgress] = useState(0);
-    const [resolved, setResolved] = useState(0);
+export default function Banner({numberOfPendingTickets, numberOfResolvedTickets}) {
 
     return (
         <section>
@@ -26,7 +24,7 @@ export default function Banner() {
                         />
                         
                         <h2 className="text-2xl leading-6 mb-4 relative z-10">In-Progress</h2>
-                        <p className="text-6xl font-semibold relative z-10">{inProgress}</p>
+                        <p className="text-6xl font-semibold relative z-10">{numberOfPendingTickets}</p>
                     </div>
 
                     {/* Card 2 */}
@@ -45,7 +43,7 @@ export default function Banner() {
                         />
 
                         <h2 className="text-2xl leading-6 mb-4 relative z-10">Resolved</h2>
-                        <p className="text-6xl font-semibold relative z-10">{resolved}</p>
+                        <p className="text-6xl font-semibold relative z-10">{numberOfResolvedTickets}</p>
                     </div>
 
                 </div>
