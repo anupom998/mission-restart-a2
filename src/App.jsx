@@ -4,12 +4,15 @@ import Banner from './components/Banner'
 import Footer from './components/Footer'
 import MainSection from './components/MainSection'
 import Navbar from './components/Navbar'
-import {  tickets } from "./data/tickets"
+import {tickets} from "./data/tickets"
+
 
 function App() {
 
-   const ticketsArray = tickets;
+   const [ticketsArray, setTicketsArray] = useState(tickets);
    
+    
+    
 
     const [pendingTickets, setPendingTickets] = useState([]);
     const [resolvedTickets, setResolvedTickets] = useState([]);
@@ -29,12 +32,16 @@ function App() {
 
     // adding resolved ticket to resolved in  task status
     const handleResolvedClick = (pendingTicket) => {
-        console.log("clicked", pendingTicket);
         
-        //remove from pending task
+        
+        //remove from in progress task
         setPendingTickets((prevTickets) => prevTickets.filter((prevTicket) => prevTicket.id !== pendingTicket.id)); 
 
+        // add to resolve task
         setResolvedTickets((prev) => [...prev, pendingTicket]);
+
+        // remove from ticket list
+        setTicketsArray((prev) => prev.filter((prevTicket) => prevTicket.id !== pendingTicket.id));
     }
  
   return (
