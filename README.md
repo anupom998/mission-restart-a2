@@ -1,16 +1,9 @@
-# React + Vite
+What is JSX, and why is it used? -> Javascript XML. let us write html inside javascript. actually those are not html. help us to add logic in different file and ui in another file. we can write logic and ui structure both in one place. JSX convert to regular javascript functions.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+What is the difference between State and Props? -> props are read-only. they are objects. passed from parents to child. one way only. when props change; parent updates them. state is internal data management within a component. it can change over time. when it changes; the component re-renders. 
 
-Currently, two official plugins are available:
+What is the useState hook, and how does it work? -> useState is a react hook that adds state to functional components. It returns an array with two values: the current state and a function to update the state. When we call the update function, the component re-renders with the new value.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+How can you share state between components in React? -> We can use props. in the closest common parent component and pass it down as props. In more complex apps; we can use Context Api, redux, zustand etc.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+How is event handling done in React? -> Event handling in React uses camelCase syntax (like onClick instead of onclick) and passes functions as event handlers. we can define handler functions directly in our component and reference them without quotes.
