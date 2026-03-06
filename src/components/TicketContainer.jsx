@@ -1,10 +1,10 @@
 import TicketCard from './TicketCard';
-import {tickets} from "../data/tickets"
 
-export default function TicketContainer() {
+
+export default function TicketContainer({tickets}) {
     return(
-        <div className="container mx-auto px-4">
-            <h1 className="heading my-8">Customer Tickets</h1>
+        <div className='col-span-3 '>
+            <h1 className="heading mb-4">Customer Tickets</h1>
 
             {/* Grid layout for tickets */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
