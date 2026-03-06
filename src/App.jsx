@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import MainSection from './components/MainSection'
 import Navbar from './components/Navbar'
 import {tickets} from "./data/tickets"
+ import { ToastContainer, toast } from 'react-toastify';
 
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
     // adding ticket to in-progress in task status
     const handlePendingClick = (ticket) => {
         // console.log("clicked", ticket);
+        // show toastify notification
+        toast("Your ticket is in progress")
+
+
         setPendingTickets((prev) => [...prev, ticket])
     }
     
@@ -33,6 +38,8 @@ function App() {
     // adding resolved ticket to resolved in  task status
     const handleResolvedClick = (pendingTicket) => {
         
+      // show toastify notification
+        toast("Your task is completed")
         
         //remove from in progress task
         setPendingTickets((prevTickets) => prevTickets.filter((prevTicket) => prevTicket.id !== pendingTicket.id)); 
@@ -49,6 +56,7 @@ function App() {
      <Navbar />
      <Banner numberOfPendingTickets={numberOfPendingTickets} numberOfResolvedTickets={numberOfResolvedTickets} />
      <MainSection tickets={ticketsArray} handlePendingClick={handlePendingClick} handleResolvedClick={handleResolvedClick} pendingTickets={pendingTickets} resolvedTickets={resolvedTickets} />
+     <ToastContainer />
       <Footer />
     </>
   )
