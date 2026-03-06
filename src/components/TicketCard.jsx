@@ -1,10 +1,10 @@
 import { Calendar } from 'lucide-react'; 
 
-const TicketCard = ({ticket}) => {
+const TicketCard = ({ticket, handlePendingClick}) => {
 
     const {id, title, description, customer, priority, status, createdAt} = ticket;
 
-//   priority colors
+  //priority colors
   const priorityColors = {
     high: 'text-red-500',
     medium: 'text-yellow-500',
@@ -23,7 +23,7 @@ const TicketCard = ({ticket}) => {
   };
 
   return (
-    <div className="p-4 rounded-sm shadow-md">
+    <button className="p-4 rounded-sm shadow-md cursor-pointer" onClick={() => handlePendingClick(ticket)}>
       <div className="flex justify-between">
         <h3 className="sub-heading">{title}</h3>
         <div className={`flex justify-center items-center gap-2 font-bold py-1 px-3 rounded-full ${status === "Open" ? "text-green-500 bg-green-200" : "text-yellow-500 bg-yellow-100"}`}>
@@ -52,7 +52,7 @@ const TicketCard = ({ticket}) => {
           </div>
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 
